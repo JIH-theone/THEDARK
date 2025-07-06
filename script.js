@@ -4,6 +4,11 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-ctx.fillStyle = "white";
-ctx.font = "30px sans-serif";
-ctx.fillText("you are not alone", 50, 100);
+const lantern = document.getElementById("lantern");
+const text = document.getElementById("text");
+const music = document.getElementById("darkMusic");
+
+lantern.addEventListener("click", () => {
+  text.style.opacity = "0"; // Fade text
+  music.play(); // Play music
+});
