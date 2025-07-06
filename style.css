@@ -25,8 +25,7 @@ html, body {
   position: absolute;
   bottom: 10%;
   right: 10%;
-  width: 180px;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 150, 0.8));
+  width: 180px; 
   animation: floatLantern 4s ease-in-out infinite;
   cursor: pointer;
   z-index: 11;
