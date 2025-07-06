@@ -1,14 +1,19 @@
-// Just a test glow
-const canvas = document.getElementById("voidCanvas");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
 const lantern = document.getElementById("lantern");
-const text = document.getElementById("text");
-const music = document.getElementById("darkMusic");
+const fadeText = document.getElementById("fadeText");
+const audio = document.getElementById("darkAudio");
 
+// Start playing immediately (some browsers block autoplay unless muted or interacted)
+window.addEventListener("load", () => {
+  audio.play().catch(() => {
+    // If browser blocks it, wait for user interaction
+    document.body.addEventListener("click", () => audio.play());
+  });
+});
+
+// Fade text on click or hover
+lantern.addEventListener("mouseenter", () => {
+  fadeText.style.opacity = "0";
+});
 lantern.addEventListener("click", () => {
-  text.style.opacity = "0"; // Fade text
-  music.play(); // Play music
+  fadeText.style.opacity = "0";
 });
