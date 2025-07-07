@@ -11,9 +11,30 @@ document.querySelectorAll('.emotion-box').forEach(box => {
     }
   });
 
+  document.querySelectorAll('.emotion-box').forEach(box => {
+  const textarea = box.querySelector('textarea');
+  const button = box.querySelector('button');
+
+  textarea.addEventListener('input', () => {
+    if (textarea.value.trim().length > 0) {
+      button.style.display = 'block';
+    } else {
+      button.style.display = 'none';
+    }
+  });
+
   button.addEventListener('click', () => {
-    hand.style.display = 'block';
-    hand.style.animation = 'slash 1s ease-out';
+    // Add absorb animation to the whole box
+    box.style.animation = 'absorb 1.8s ease-in-out';
+
+    // After animation completes, clear everything
+    setTimeout(() => {
+      textarea.value = '';
+      button.style.display = 'none';
+      box.style.animation = '';
+    }, 1800);
+  });
+});
 
     setTimeout(() => {
       textarea.value = '';
