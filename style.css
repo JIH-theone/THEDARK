@@ -32,12 +32,44 @@ body {
   border: none;
   border-radius: 10px;
   position: relative;
+  @keyframes absorb {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: brightness(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(100%);
+  }
 }
 
 .emotion-box h2 {
   text-align: center;
   margin-bottom: 10px;
   font-size: 1.5rem;
+@keyframes absorb {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: brightness(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(100%);
+  }
 }
 
 textarea {
