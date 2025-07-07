@@ -14,13 +14,14 @@ body {
 }
 
 #lantern {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: absolute;
+  top: 180px;
+  right: 10%;
   width: 180px;
-  z-index: 20;
   animation: floatLantern 4s ease-in-out infinite;
   pointer-events: none;
+  z-index: 0;
+}
 }
 
 @keyframes floatLantern {
