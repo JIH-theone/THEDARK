@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Dark</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE DARK</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="fadeText">THE DARK</div>
-  <img id="lantern" src="lantern-arm.png" alt="Floating Lantern" />
-  <audio id="darkAudio" src="dark-theme.mp3" autoplay loop></audio>
+  <h1 id="main-title">THE DARK</h1>
+
+  <img id="lantern" src="lantern-arm.png" alt="">
+
+  <audio id="bg-music" autoplay loop>
+    <source src="https://your-link-to-audio-file.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="scroll-section">
+    <div class="emotion-box" id="fear">
+      <h2>Fear</h2>
+      <textarea placeholder="Let it out..."></textarea>
+      <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
+      <div class="hand-slash"></div>
+    </div>
+    <div class="emotion-box" id="anger">
+      <h2>Anger</h2>
+      <textarea placeholder="Let it out..."></textarea>
+      <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
+      <div class="hand-slash"></div>
+    </div>
+    <div class="emotion-box" id="disgust">
+      <h2>Disgust</h2>
+      <textarea placeholder="Let it out..."></textarea>
+      <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
+      <div class="hand-slash"></div>
+    </div>
+    <div class="emotion-box" id="sadness">
+      <h2>Sadness</h2>
+      <textarea placeholder="Let it out..."></textarea>
+      <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
+      <div class="hand-slash"></div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-<img id="lantern" src="lantern-arm.png" alt="Floating Lantern" />
-<div class="scroll-section">
-  <div class="emotion-box" id="fear-box">
-    <h2>Fear</h2>
-    <textarea placeholder="Let it out..."></textarea>
-    <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
-    <div class="hand-slash"></div>
-  </div>
-  <div class="emotion-box" id="anger-box">
-    <h2>Anger</h2>
-    <textarea placeholder="Let it out..."></textarea>
-    <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
-    <div class="hand-slash"></div>
-  </div>
-  <div class="emotion-box" id="disgust-box">
-    <h2>Disgust</h2>
-    <textarea placeholder="Let it out..."></textarea>
-    <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
-    <div class="hand-slash"></div>
-  </div>
-  <div class="emotion-box" id="sadness-box">
-    <h2>Sadness</h2>
-    <textarea placeholder="Let it out..."></textarea>
-    <button class="thank-you"><span class="ps">yummy!</span>Thank You</button>
-    <div class="hand-slash"></div>
-  </div>
-</div>
