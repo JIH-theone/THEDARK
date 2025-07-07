@@ -12,19 +12,6 @@ body {
   font-size: 4rem;
   letter-spacing: 8px;
 }
-
-#lantern {
-  position: absolute;
-  top: 180px;
-  right: 10%;
-  width: 180px;
-  animation: floatLantern 4s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-}
-
-@keyframes floatLantern {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
