@@ -76,3 +76,12 @@ button.thank-you {
   transform: scale(0.9);
   filter: brightness(0%);
 }
+.secret-line {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 30px;
+  width: 2px;
+  background: white;
+  cursor: pointer;
+}
