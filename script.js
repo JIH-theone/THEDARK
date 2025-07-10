@@ -20,22 +20,24 @@ document.querySelectorAll('.emotion-box').forEach(box => {
     }, 1500);
   });
 });
-function checkUnlock() {
-  if (localStorage.getItem('darkUnlocked') === 'true') {
-    document.getElementById('lockedMessage').style.display = 'none';
-    document.getElementById('unlockedWords').style.display = 'block';
-  }
-}
-checkUnlock();
-
-function redirectToPayPal() {
-  window.open('https://www.paypal.me/JasonOudsema879/5.99', '_blank');
+function handleUnlock() {
+  alert("You will now be taken to a checkout page. Once done, refresh to unlock.");
+  window.open('https://paypal.com/paypalme', '_blank'); // masked identity PayPal page
 }
 
 function enterPassword() {
-  const input = prompt('WHAT IS THE PASSWORD BRO??');
-  if (input === '0420') {
-    localStorage.setItem('darkUnlocked', 'true');
+  const input = prompt("WHAT IS THE PASSWORD BRO??");
+  if (input === "0420") {
+    localStorage.setItem("darkUnlocked", "true");
     location.reload();
   }
 }
+
+function checkUnlock() {
+  if (localStorage.getItem("darkUnlocked") === "true") {
+    document.getElementById("lockedMessage").style.display = "none";
+    document.getElementById("unlockedWords").style.display = "block";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", checkUnlock);
