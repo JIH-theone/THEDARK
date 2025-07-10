@@ -36,20 +36,16 @@
 </body>
 </html>
 <!-- Slide 2 -->
-<section class="slide locked" id="slide2">
-  <!-- Locked View -->
-  <div class="locked-content" id="lockedMessage">
+<section class="slide" id="slide2">
+  <div id="lockedMessage" class="locked-content">
     <h2>This page is locked.</h2>
     <p>Unlock it for $5.99 to access a deeper layer of THE DARK.</p>
-    <button onclick="redirectToPayPal()" class="pay-button">Unlock for $5.99</button>
+    <button class="pay-button" onclick="handleUnlock()">Unlock for $5.99</button>
     <p class="unlock-note">After payment, refresh the page to unlock.</p>
-
-    <!-- Secret unlock trigger -->
     <div class="secret-line" onclick="enterPassword()"></div>
   </div>
 
-  <!-- Unlocked View -->
-  <div class="unlocked-content" id="unlockedWords">
+  <div id="unlockedWords" class="unlocked-content">
     <span class="floating top-left">WHY WOULD THEY DO THIS TO ME?!</span>
     <span class="floating top-right">HE’S GOING TO BETRAY ME?!</span>
     <span class="floating bottom-left">WHO ARE YOU!</span>
