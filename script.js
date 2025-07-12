@@ -1,28 +1,47 @@
-document.querySelectorAll('.emotion-box').forEach(box => {
-  const textarea = box.querySelector('textarea');
-  const button = box.querySelector('button');
+let currentSlide = 0;
 
-  textarea.addEventListener('input', () => {
-    if (textarea.value.trim().length > 0) {
-      button.style.display = 'block';
-    } else {
-      button.style.display = 'none';
-    }
-  });
-
-  button.addEventListener('click', () => {
-    box.classList.add('absorbing');
-
-    setTimeout(() => {
-      textarea.value = '';
-      button.style.display = 'none';
-      box.classList.remove('absorbing');
-    }, 1500);
-  });
+document.addEventListener("wheel", (e) => {
+  if (e.deltaX > 0 || e.deltaY > 50) slideRight();
+  else if (e.deltaX < 0 || e.deltaY < -50) slideLeft();
 });
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") slideRight();
+  if (e.key === "ArrowLeft") slideLeft();
+});
+
+function slideRight() {
+  if (currentSlide < 1) {
+    currentSlide++;
+    document.getElementById("slider").style.transform = "translateX(-100vw)";
+  }
+}
+
+function slideLeft() {
+  if (currentSlide > 0) {
+    currentSlide--;
+    document.getElementById("slider").style.transform = "translateX(0vw)";
+  }
+}
+
+function showButton(textarea) {
+  const button = textarea.nextElementSibling;
+  button.style.display = "block";
+}
+
+function absorbText(button) {
+  const box = button.parentElement;
+  box.style.transition = "opacity 1.5s ease";
+  box.style.opacity = 0;
+  setTimeout(() => {
+    box.innerHTML = box.innerHTML;
+    box.style.opacity = 1;
+  }, 1600);
+}
+
 function handleUnlock() {
-  alert("You will now be taken to a checkout page. Once done, refresh to unlock.");
-  window.open('https://paypal.com/paypalme', '_blank'); // masked identity PayPal page
+  alert("You’ll be redirected to Venmo to complete the purchase.");
+  window.open("https://venmo.com/u/JIH1001", "_blank");
 }
 
 function enterPassword() {
@@ -33,11 +52,9 @@ function enterPassword() {
   }
 }
 
-function checkUnlock() {
+window.onload = () => {
   if (localStorage.getItem("darkUnlocked") === "true") {
-    document.getElementById("lockedMessage").style.display = "none";
-    document.getElementById("unlockedWords").style.display = "block";
+    document.getElementById("lockedContent").style.display = "none";
+    document.getElementById("unlockedContent").style.display = "block";
   }
-}
-
-document.addEventListener("DOMContentLoaded", checkUnlock);
+};
