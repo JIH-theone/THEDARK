@@ -12,6 +12,7 @@ body {
   flex-direction: row;
   width: 200vw;
   transition: transform 0.4s ease;
+  overflow-x: hidden; /* prevents slide 2 from leaking into slide 1 */
 }
 
 .slide {
