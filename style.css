@@ -1,56 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>THE DARK</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main id="slider">
-    <!-- Slide 1 -->
-    <section class="slide" id="slide1">
-      <h1 class="title">THE DARK</h1>
-      <div class="emotion-box">
-        <label>FEAR</label>
-        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
-        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
-      </div>
-      <div class="emotion-box">
-        <label>ANGER</label>
-        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
-        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
-      </div>
-      <div class="emotion-box">
-        <label>DISGUST</label>
-        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
-        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
-      </div>
-      <div class="emotion-box">
-        <label>SADNESS</label>
-        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
-        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
-      </div>
-    </section>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #000;
+  color: white;
+  overflow: hidden;
+}
 
-    <!-- Slide 2 -->
-    <section class="slide" id="slide2">
-      <div id="lockedContent">
-        <h2>This page is locked.</h2>
-        <p>Unlock it for $5.99 to access a deeper layer of THE DARK.</p>
-        <button class="pay-button" onclick="handleUnlock()">Unlock for $5.99</button>
-        <p class="unlock-note">After payment, refresh the page to unlock.</p>
-        <div class="secret-line" onclick="enterPassword()"></div>
-      </div>
-      <div id="unlockedContent">
-        <span class="floating top-left">WHY WOULD THEY DO THIS TO ME?!</span>
-        <span class="floating top-right">HE’S GOING TO BETRAY ME?!</span>
-        <span class="floating bottom-left">WHO ARE YOU!</span>
-        <span class="floating bottom-right">DO YOU KNOW WHO I AM?!?</span>
-        <span class="floating center">IF HE CAN’T DO IT THEN I’LL KILL THAT BASTARD, MATT, MYSELF</span>
-      </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
-</html>
+#slider {
+  display: flex;
+  flex-direction: row;
+  width: 200vw;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.emotion-box {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  background: black;
+  color: red;
+  border: 1px solid red;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: none;
+}
+
+.submit-btn {
+  display: none;
+  position: absolute;
+  bottom: -2.5rem;
+  right: 0;
+  background: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.yummy {
+  display: block;
+  font-size: 0.6rem;
+  color: red;
+}
+
+.pay-button {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.unlock-note {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.secret-line {
+  height: 30px;
+  width: 2px;
+  background: white;
+  cursor: pointer;
+  margin: 2rem auto;
+}
+
+#unlockedContent {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.floating {
+  position: absolute;
+  color: red;
+  font-size: 1.5rem;
+  animation: float 5s ease-in-out infinite;
+}
+
+.top-left    { top: 10px; left: 10px; }
+.top-right   { top: 10px; right: 10px; }
+.bottom-left { bottom: 10px; left: 10px; }
+.bottom-right{ bottom: 10px; right: 10px; }
+.center      {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: angryFloat 1.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes angryFloat {
+  0%   { transform: translate(-50%, -50%) translate(0, 0); }
+  25%  { transform: translate(-50%, -50%) translate(3px, -3px); }
+  50%  { transform: translate(-50%, -50%) translate(-3px, 2px); }
+  75%  { transform: translate(-50%, -50%) translate(1px, -2px); }
+  100% { transform: translate(-50%, -50%) translate(0, 0); }
+}
