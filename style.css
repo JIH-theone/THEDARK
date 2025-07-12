@@ -1,135 +1,56 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE DARK</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="slider">
+    <!-- Slide 1 -->
+    <section class="slide" id="slide1">
+      <h1 class="title">THE DARK</h1>
+      <div class="emotion-box">
+        <label>FEAR</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+      <div class="emotion-box">
+        <label>ANGER</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+      <div class="emotion-box">
+        <label>DISGUST</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+      <div class="emotion-box">
+        <label>SADNESS</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+    </section>
 
-body {
-  background-color: #000;
-  color: white;
-  font-family: monospace;
-  padding: 50px;
-  min-height: 100vh;
-}
-
-#title {
-  text-align: center;
-  font-size: 4rem;
-  margin-bottom: 50px;
-  letter-spacing: 4px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-}
-
-.emotion-box {
-  width: 80%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #000;
-  border-radius: 10px;
-  transition: all 1.5s ease-in-out;
-  position: relative;
-}
-
-.emotion-box h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-  text-align: left;
-}
-
-textarea {
-  width: 100%;
-  height: 120px;
-  background-color: #000;
-  color: red;
-  border: 1px solid #222;
-  padding: 10px;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: none;
-}
-
-button.thank-you {
-  display: none;
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: white;
-  color: black;
-  border: none;
-  padding: 8px 14px;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.absorbing {
-  opacity: 0;
-  transform: scale(0.9);
-  filter: brightness(0%);
-}
-/* Slide 2 Styles */
-.locked-content {
-  text-align: center;
-  margin-top: 20vh;
-  position: relative;
-}
-
-.pay-button {
-  background: white;
-  color: black;
-  padding: 10px 20px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.unlock-note {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 10px;
-}
-
-.secret-line {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  height: 30px;
-  width: 2px;
-  background: white;
-  cursor: pointer;
-}
-
-.unlocked-content {
-  display: none;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.floating {
-  position: absolute;
-  color: red;
-  font-size: 1.5rem;
-  animation: float 6s ease-in-out infinite;
-}
-
-.top-left    { top: 20px; left: 20px; transform: rotate(-2deg); }
-.top-right   { top: 20px; right: 20px; transform: rotate(3deg); }
-.bottom-left { bottom: 20px; left: 20px; transform: rotate(-3deg); }
-.bottom-right{ bottom: 20px; right: 20px; transform: rotate(2deg); }
-.center      { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(1deg); }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) scale(1) rotate(1deg); }
-  50% { transform: translateY(-10px) scale(1.02) rotate(1deg); }
-}
+    <!-- Slide 2 -->
+    <section class="slide" id="slide2">
+      <div id="lockedContent">
+        <h2>This page is locked.</h2>
+        <p>Unlock it for $5.99 to access a deeper layer of THE DARK.</p>
+        <button class="pay-button" onclick="handleUnlock()">Unlock for $5.99</button>
+        <p class="unlock-note">After payment, refresh the page to unlock.</p>
+        <div class="secret-line" onclick="enterPassword()"></div>
+      </div>
+      <div id="unlockedContent">
+        <span class="floating top-left">WHY WOULD THEY DO THIS TO ME?!</span>
+        <span class="floating top-right">HE’S GOING TO BETRAY ME?!</span>
+        <span class="floating bottom-left">WHO ARE YOU!</span>
+        <span class="floating bottom-right">DO YOU KNOW WHO I AM?!?</span>
+        <span class="floating center">IF HE CAN’T DO IT THEN I’LL KILL THAT BASTARD, MATT, MYSELF</span>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
