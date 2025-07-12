@@ -2,54 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>THE DARK</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 id="title">THE DARK</h1>
+  <main id="slider">
+    <!-- Slide 1 -->
+    <section class="slide" id="slide1">
+      <h1 class="title">THE DARK</h1>
+      <div class="emotion-box">
+        <label>FEAR</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+      <div class="emotion-box">
+        <label>ANGER</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+      <div class="emotion-box">
+        <label>DISGUST</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+      <div class="emotion-box">
+        <label>SADNESS</label>
+        <textarea placeholder="LET ME HAVE IT..." oninput="showButton(this)"></textarea>
+        <button class="submit-btn" onclick="absorbText(this)">Thank You!<span class="yummy">ps: yummy!</span></button>
+      </div>
+    </section>
 
-  <div class="container">
-    <div class="emotion-box">
-      <h2>Fear</h2>
-      <textarea placeholder="LET ME HAVE IT..."></textarea>
-      <button class="thank-you">Thank You!</button>
-    </div>
-    <div class="emotion-box">
-      <h2>Anger</h2>
-      <textarea placeholder="LET ME HAVE IT..."></textarea>
-      <button class="thank-you">Thank You!</button>
-    </div>
-    <div class="emotion-box">
-      <h2>Disgust</h2>
-      <textarea placeholder="LET ME HAVE IT..."></textarea>
-      <button class="thank-you">Thank You!</button>
-    </div>
-    <div class="emotion-box">
-      <h2>Sadness</h2>
-      <textarea placeholder="LET ME HAVE IT..."></textarea>
-      <button class="thank-you">Thank You!</button>
-    </div>
-  </div>
-
+    <!-- Slide 2 -->
+    <section class="slide" id="slide2">
+      <div id="lockedContent">
+        <h2>This page is locked.</h2>
+        <p>Unlock it for $5.99 to access a deeper layer of THE DARK.</p>
+        <button class="pay-button" onclick="handleUnlock()">Unlock for $5.99</button>
+        <p class="unlock-note">After payment, refresh the page to unlock.</p>
+        <div class="secret-line" onclick="enterPassword()"></div>
+      </div>
+      <div id="unlockedContent">
+        <span class="floating top-left">WHY WOULD THEY DO THIS TO ME?!</span>
+        <span class="floating top-right">HE’S GOING TO BETRAY ME?!</span>
+        <span class="floating bottom-left">WHO ARE YOU!</span>
+        <span class="floating bottom-right">DO YOU KNOW WHO I AM?!?</span>
+        <span class="floating center">IF HE CAN’T DO IT THEN I’LL KILL THAT BASTARD, MATT, MYSELF</span>
+      </div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
-<!-- Slide 2 -->
-<section class="slide" id="slide2">
-  <div id="lockedMessage" class="locked-content">
-    <h2>This page is locked.</h2>
-    <p>Unlock it for $5.99 to access a deeper layer of THE DARK.</p>
-    <button class="pay-button" onclick="handleUnlock()">Unlock for $5.99</button>
-    <p class="unlock-note">After payment, refresh the page to unlock.</p>
-    <div class="secret-line" onclick="enterPassword()"></div>
-  </div>
-
-  <div id="unlockedWords" class="unlocked-content">
-    <span class="floating top-left">WHY WOULD THEY DO THIS TO ME?!</span>
-    <span class="floating top-right">HE’S GOING TO BETRAY ME?!</span>
-    <span class="floating bottom-left">WHO ARE YOU!</span>
-    <span class="floating bottom-right">DO YOU KNOW WHO I AM?!?</span>
-    <span class="floating center">IF HE CANT DO IT THEN I’LL KILL THAT BASTARD, MATT, MYSELF</span>
-  </div>
-</section>
